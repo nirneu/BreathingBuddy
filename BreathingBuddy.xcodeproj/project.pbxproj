@@ -13,7 +13,6 @@
 		A8158BB72B83D3BF00070E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */; };
 		A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC12B83D45000070E98 /* DeepBreathingView.swift */; };
 		A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */; };
-		A8158BC62B83D4A900070E98 /* EqualBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC52B83D4A900070E98 /* EqualBreathingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +23,6 @@
 		A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A8158BC12B83D45000070E98 /* DeepBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreathingView.swift; sourceTree = "<group>"; };
 		A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathFourSevenEightView.swift; sourceTree = "<group>"; };
-		A8158BC52B83D4A900070E98 /* EqualBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualBreathingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +77,6 @@
 			children = (
 				A8158BC12B83D45000070E98 /* DeepBreathingView.swift */,
 				A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */,
-				A8158BC52B83D4A900070E98 /* EqualBreathingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
-				A8158BC62B83D4A900070E98 /* EqualBreathingView.swift in Sources */,
 				A8158BB02B83D3BE00070E98 /* BreathingBuddyApp.swift in Sources */,
 				A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */,
 				A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */,
