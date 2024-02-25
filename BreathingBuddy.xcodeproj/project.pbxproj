@@ -13,6 +13,11 @@
 		A8158BB72B83D3BF00070E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */; };
 		A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC12B83D45000070E98 /* DeepBreathingView.swift */; };
 		A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */; };
+		A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E82E62B8B869D00BAA308 /* BannerView.swift */; };
+		A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */; };
+		A8A8DEF32B87880C005BE779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A8DEF22B87880C005BE779 /* GoogleService-Info.plist */; };
+		A8A8DF292B8789B1005BE779 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */; };
+		A8A8DF2C2B8790DF005BE779 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,10 @@
 		A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A8158BC12B83D45000070E98 /* DeepBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreathingView.swift; sourceTree = "<group>"; };
 		A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathFourSevenEightView.swift; sourceTree = "<group>"; };
+		A83E82E42B8B852800BAA308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A83E82E62B8B869D00BAA308 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdViewController.swift; sourceTree = "<group>"; };
+		A8A8DEF22B87880C005BE779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A8DF2C2B8790DF005BE779 /* GoogleMobileAds in Frameworks */,
+				A8A8DF292B8789B1005BE779 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,10 +66,13 @@
 		A8158BAE2B83D3BE00070E98 /* BreathingBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				A83E82E42B8B852800BAA308 /* Info.plist */,
+				A83E82E52B8B866A00BAA308 /* Banner */,
 				A8158BBD2B83D40800070E98 /* Views */,
 				A8158BAF2B83D3BE00070E98 /* BreathingBuddyApp.swift */,
 				A8158BB12B83D3BE00070E98 /* ContentView.swift */,
 				A8158BB32B83D3BF00070E98 /* Assets.xcassets */,
+				A8A8DEF22B87880C005BE779 /* GoogleService-Info.plist */,
 				A8158BB52B83D3BF00070E98 /* Preview Content */,
 			);
 			path = BreathingBuddy;
@@ -81,6 +95,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A83E82E52B8B866A00BAA308 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				A83E82E62B8B869D00BAA308 /* BannerView.swift */,
+				A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,6 +120,10 @@
 			dependencies = (
 			);
 			name = BreathingBuddy;
+			packageProductDependencies = (
+				A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */,
+				A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */,
+			);
 			productName = BreathingBuddy;
 			productReference = A8158BAC2B83D3BE00070E98 /* BreathingBuddy.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +152,10 @@
 				Base,
 			);
 			mainGroup = A8158BA32B83D3BE00070E98;
+			packageReferences = (
+				A8A8DF272B8789B1005BE779 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A8A8DF2A2B8790DF005BE779 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = A8158BAD2B83D3BE00070E98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +172,7 @@
 			files = (
 				A8158BB72B83D3BF00070E98 /* Preview Assets.xcassets in Resources */,
 				A8158BB42B83D3BF00070E98 /* Assets.xcassets in Resources */,
+				A8A8DEF32B87880C005BE779 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */,
+				A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */,
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
 				A8158BB02B83D3BE00070E98 /* BreathingBuddyApp.swift in Sources */,
 				A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */,
@@ -291,6 +325,8 @@
 				DEVELOPMENT_TEAM = 2A8JYJ93YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BreathingBuddy/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,6 +356,8 @@
 				DEVELOPMENT_TEAM = 2A8JYJ93YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BreathingBuddy/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -360,6 +398,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8A8DF272B8789B1005BE779 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.21.0;
+			};
+		};
+		A8A8DF2A2B8790DF005BE779 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A8DF272B8789B1005BE779 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8A8DF2A2B8790DF005BE779 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A8158BA42B83D3BE00070E98 /* Project object */;
 }

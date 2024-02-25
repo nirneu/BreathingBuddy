@@ -15,6 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
+            
             ZStack {
                 // Background color extending to the screen edges
                 backgroundColor.edgesIgnoringSafeArea(.all)
@@ -51,14 +52,17 @@ struct ContentView: View {
                             .foregroundColor(secondaryColor)
                     }
 
-                    Spacer()
                 }
                 .padding()
+                
             }
             .navigationBarHidden(true)
-        }
+        
+        }.addBanner()
     }
+
 }
+
 
 struct StyledButton: View {
     let text: String
