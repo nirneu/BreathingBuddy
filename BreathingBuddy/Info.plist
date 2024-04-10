@@ -11,5 +11,7 @@
 			<string>cstr6suwn9.skadnetwork</string>
 		</dict>
 	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Our app uses your device&apos;s advertising identifier to improve your advertising experience. We use it for frequency capping, aggregated ad reporting, and to combat fraud and abuse. This data is not used to track you across apps and websites owned by other companies. Your privacy is important to us, and you can change your preference at any time in the app settings.</string>
 </dict>
 </plist>

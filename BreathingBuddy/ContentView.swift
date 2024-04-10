@@ -28,7 +28,7 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(width: 250, height: 250)
 
-                    Text("BreathingBuddy")
+                    Text("BreathPause")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(primaryColor)
@@ -57,8 +57,8 @@ struct ContentView: View {
                 
             }
             .navigationBarHidden(true)
-        
-        }.addBanner()
+        }
+        .addBanner()
     }
 
 }
