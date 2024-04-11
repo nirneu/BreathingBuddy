@@ -9,7 +9,6 @@ import Foundation
 import GoogleMobileAds
 import UIKit
 import SwiftUI
-import GoogleMobileAds
 import AppTrackingTransparency
 import AdSupport
 
@@ -18,10 +17,19 @@ class BannerAdViewController:UIViewController, GADBannerViewDelegate{
     let adUnitId = "ca-app-pub-3367927715135195/3849911755"
     
     
-    // View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTrackingChanged(_:)), name: NSNotification.Name("TrackingAuthorizationDidChange"), object: nil)
+    }
+    
+    @objc func handleTrackingChanged(_ notification: Notification) {
+        if let userInfo = notification.userInfo as? [String: Bool], let authorized = userInfo["authorized"] {
+            if authorized {
+                loadBannerAd()
+            } else {
+                loadBannerAdWithoutTracking()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

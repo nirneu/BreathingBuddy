@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A8158BB02B83D3BE00070E98 /* BreathingBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BAF2B83D3BE00070E98 /* BreathingBuddyApp.swift */; };
+		A8158BB02B83D3BE00070E98 /* BreathPauseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BAF2B83D3BE00070E98 /* BreathPauseApp.swift */; };
 		A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BB12B83D3BE00070E98 /* ContentView.swift */; };
 		A8158BB42B83D3BF00070E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB32B83D3BF00070E98 /* Assets.xcassets */; };
 		A8158BB72B83D3BF00070E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */; };
@@ -23,8 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A8158BAC2B83D3BE00070E98 /* BreathingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreathingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8158BAF2B83D3BE00070E98 /* BreathingBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingBuddyApp.swift; sourceTree = "<group>"; };
+		A8158BAC2B83D3BE00070E98 /* BreathPause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreathPause.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8158BAF2B83D3BE00070E98 /* BreathPauseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathPauseApp.swift; sourceTree = "<group>"; };
 		A8158BB12B83D3BE00070E98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8158BB32B83D3BF00070E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		A8158BA32B83D3BE00070E98 = {
 			isa = PBXGroup;
 			children = (
-				A8158BAE2B83D3BE00070E98 /* BreathingBuddy */,
+				A8158BAE2B83D3BE00070E98 /* BreathPause */,
 				A8158BAD2B83D3BE00070E98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,24 +62,24 @@
 		A8158BAD2B83D3BE00070E98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A8158BAC2B83D3BE00070E98 /* BreathingBuddy.app */,
+				A8158BAC2B83D3BE00070E98 /* BreathPause.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A8158BAE2B83D3BE00070E98 /* BreathingBuddy */ = {
+		A8158BAE2B83D3BE00070E98 /* BreathPause */ = {
 			isa = PBXGroup;
 			children = (
 				A83E82E42B8B852800BAA308 /* Info.plist */,
 				A83E82E52B8B866A00BAA308 /* Banner */,
 				A8158BBD2B83D40800070E98 /* Views */,
-				A8158BAF2B83D3BE00070E98 /* BreathingBuddyApp.swift */,
+				A8158BAF2B83D3BE00070E98 /* BreathPauseApp.swift */,
 				A8158BB12B83D3BE00070E98 /* ContentView.swift */,
 				A8158BB32B83D3BF00070E98 /* Assets.xcassets */,
 				A8A8DEF22B87880C005BE779 /* GoogleService-Info.plist */,
 				A8158BB52B83D3BF00070E98 /* Preview Content */,
 			);
-			path = BreathingBuddy;
+			path = BreathPause;
 			sourceTree = "<group>";
 		};
 		A8158BB52B83D3BF00070E98 /* Preview Content */ = {
@@ -113,9 +113,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A8158BAB2B83D3BE00070E98 /* BreathingBuddy */ = {
+		A8158BAB2B83D3BE00070E98 /* BreathPause */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8158BBA2B83D3BF00070E98 /* Build configuration list for PBXNativeTarget "BreathingBuddy" */;
+			buildConfigurationList = A8158BBA2B83D3BF00070E98 /* Build configuration list for PBXNativeTarget "BreathPause" */;
 			buildPhases = (
 				A8158BA82B83D3BE00070E98 /* Sources */,
 				A8158BA92B83D3BE00070E98 /* Frameworks */,
@@ -125,13 +125,13 @@
 			);
 			dependencies = (
 			);
-			name = BreathingBuddy;
+			name = BreathPause;
 			packageProductDependencies = (
 				A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */,
 				A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */,
 			);
 			productName = BreathingBuddy;
-			productReference = A8158BAC2B83D3BE00070E98 /* BreathingBuddy.app */;
+			productReference = A8158BAC2B83D3BE00070E98 /* BreathPause.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A8158BA72B83D3BE00070E98 /* Build configuration list for PBXProject "BreathingBuddy" */;
+			buildConfigurationList = A8158BA72B83D3BE00070E98 /* Build configuration list for PBXProject "BreathPause" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -166,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A8158BAB2B83D3BE00070E98 /* BreathingBuddy */,
+				A8158BAB2B83D3BE00070E98 /* BreathPause */,
 			);
 		};
 /* End PBXProject section */
@@ -193,7 +193,7 @@
 				A8E6D0C92BC829170059127C /* GuidedBreathFocusView.swift in Sources */,
 				A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */,
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
-				A8158BB02B83D3BE00070E98 /* BreathingBuddyApp.swift in Sources */,
+				A8158BB02B83D3BE00070E98 /* BreathPauseApp.swift in Sources */,
 				A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */,
 				A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */,
 				A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */,
@@ -329,12 +329,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BreathingBuddy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BreathPause/Preview Content\"";
 				DEVELOPMENT_TEAM = 2A8JYJ93YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BreathingBuddy/Info.plist;
+				INFOPLIST_FILE = BreathPause/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Our app uses your device's advertising identifier to improve your advertising experience. We use it for frequency capping, aggregated ad reporting, and to combat fraud and abuse. This data is not used to track you across apps and websites owned by other companies. Your privacy is important to us, and you can change your preference at any time in the app settings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -345,7 +346,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nirneu.BreathingBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nirneu.BreathPause;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -364,12 +365,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BreathingBuddy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BreathPause/Preview Content\"";
 				DEVELOPMENT_TEAM = 2A8JYJ93YV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BreathingBuddy/Info.plist;
+				INFOPLIST_FILE = BreathPause/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Our app uses your device's advertising identifier to improve your advertising experience. We use it for frequency capping, aggregated ad reporting, and to combat fraud and abuse. This data is not used to track you across apps and websites owned by other companies. Your privacy is important to us, and you can change your preference at any time in the app settings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nirneu.BreathingBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nirneu.BreathPause;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -395,7 +397,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A8158BA72B83D3BE00070E98 /* Build configuration list for PBXProject "BreathingBuddy" */ = {
+		A8158BA72B83D3BE00070E98 /* Build configuration list for PBXProject "BreathPause" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8158BB82B83D3BF00070E98 /* Debug */,
@@ -404,7 +406,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8158BBA2B83D3BF00070E98 /* Build configuration list for PBXNativeTarget "BreathingBuddy" */ = {
+		A8158BBA2B83D3BF00070E98 /* Build configuration list for PBXNativeTarget "BreathPause" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8158BBB2B83D3BF00070E98 /* Debug */,
