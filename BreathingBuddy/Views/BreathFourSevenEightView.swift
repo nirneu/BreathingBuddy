@@ -9,17 +9,16 @@ import SwiftUI
 
 struct BreathFourSevenEightView: View {
     @State private var isAnimating = false
-        @State private var phase = "Prepare" // Start with Prepare phase
-        @State private var secondsRemaining = 4 // Initialize with 0 for prepare phase
-        @State private var timer: Timer? // Hold a reference to the timer to manage it
-        private let totalCycles = 3
-        @State private var cyclesCompleted = 0
+    @State private var phase = "Prepare" // Start with Prepare phase
+    @State private var secondsRemaining = 4 // Initialize with 0 for prepare phase
+    @State private var timer: Timer? // Hold a reference to the timer to manage it
+    private let totalCycles = 3
+    @State private var cyclesCompleted = 0
     
-    // Color scheme
     private let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
     private let backgroundColor = Color(red: 0.9, green: 0.95, blue: 0.98)
     private let accentColor = Color(red: 0.3, green: 0.4, blue: 0.5)
-    
+
     var body: some View {
         ZStack {
             backgroundColor.edgesIgnoringSafeArea(.all)
@@ -122,11 +121,13 @@ struct BreathFourSevenEightView: View {
                 }
             }
         }
-    }
+}
 
 struct BreathVisualizer: View {
     @Binding var phase: String
     @Binding var secondsRemaining: Int
+    
+    private let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
     
     var body: some View {
         VStack {
@@ -140,9 +141,8 @@ struct BreathVisualizer: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
             }
-            
         }
-        .foregroundStyle(Color(red: 0.2, green: 0.6, blue: 0.8))
+        .foregroundStyle(primaryColor)
     }
 }
 

@@ -23,10 +23,10 @@ struct ContentView: View {
                 VStack(spacing: 20) {
                     Spacer()
 
-                    Image(.logo) // Make sure to use the correct image name
+                    Image("Logo")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 250, height: 250)
+                        .frame(width: 200, height: 200)
 
                     Text("BreathPause")
                         .font(.largeTitle)
@@ -42,25 +42,37 @@ struct ContentView: View {
 
                     Spacer()
 
+                    // Navigation links for each breathing exercise
                     NavigationLink(destination: DeepBreathingView()) {
                         StyledButton(text: "Deep Breathing", color: primaryColor)
                             .foregroundColor(secondaryColor)
                     }
 
                     NavigationLink(destination: BreathFourSevenEightView()) {
-                        StyledButton(text: "4-7-8 Exercise", color: accentColor)
+                        StyledButton(text: "4-7-8 Exercise", color: Color(red: 0.2, green: 0.3, blue: 0.5))
+                            .foregroundColor(secondaryColor)
+                    }
+
+                    NavigationLink(destination: BoxBreathingView()) {
+                        StyledButton(text: "Box Breathing", color: Color(red: 0.8, green: 0.7, blue: 0.6))
+                            .foregroundColor(secondaryColor)
+                    }
+
+                    NavigationLink(destination: GuidedBreathFocusView()) {
+                        StyledButton(text: "Guided Breath Focus", color: accentColor)
                             .foregroundColor(secondaryColor)
                     }
 
                 }
                 .padding()
+                .padding(.bottom, 30)
                 
             }
             .navigationBarHidden(true)
+//            .addBanner()
         }
-        .addBanner()
-    }
 
+    }
 }
 
 

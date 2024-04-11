@@ -18,6 +18,8 @@
 		A8A8DEF32B87880C005BE779 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8A8DEF22B87880C005BE779 /* GoogleService-Info.plist */; };
 		A8A8DF292B8789B1005BE779 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */; };
 		A8A8DF2C2B8790DF005BE779 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */; };
+		A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */; };
+		A8E6D0C92BC829170059127C /* GuidedBreathFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6D0C82BC829170059127C /* GuidedBreathFocusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A83E82E62B8B869D00BAA308 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdViewController.swift; sourceTree = "<group>"; };
 		A8A8DEF22B87880C005BE779 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBreathingView.swift; sourceTree = "<group>"; };
+		A8E6D0C82BC829170059127C /* GuidedBreathFocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedBreathFocusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				A8158BC12B83D45000070E98 /* DeepBreathingView.swift */,
 				A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */,
+				A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */,
+				A8E6D0C82BC829170059127C /* GuidedBreathFocusView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,11 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */,
+				A8E6D0C92BC829170059127C /* GuidedBreathFocusView.swift in Sources */,
 				A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */,
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
 				A8158BB02B83D3BE00070E98 /* BreathingBuddyApp.swift in Sources */,
 				A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */,
 				A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */,
+				A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
