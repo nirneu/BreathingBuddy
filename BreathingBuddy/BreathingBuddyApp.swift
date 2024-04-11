@@ -1,54 +1,45 @@
-//
-//  BreathingBuddyApp.swift
-//  BreathingBuddy
-//
-//  Created by Nir Neuman on 19/02/2024.
-//
-
+import UIKit
 import SwiftUI
 import FirebaseCore
 import GoogleMobileAds
 import AppTrackingTransparency
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    GADMobileAds.sharedInstance().start(completionHandler: nil)
-    
-    // Request for tracking permission
-    requestTrackingPermission()
-    
-    return true
-  }
-  
-  private func requestTrackingPermission() {
-    // Check if the App Tracking Transparency permission dialog can be shown
-    if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
-      ATTrackingManager.requestTrackingAuthorization { status in
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+
+        // Only request tracking if status is not determined
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            requestTrackingPermission()
+        } else {
+            handleTrackingAuthorization(ATTrackingManager.trackingAuthorizationStatus)
+        }
+
+        return true
+    }
+
+    private func requestTrackingPermission() {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            DispatchQueue.main.async {
+                self.handleTrackingAuthorization(status)
+            }
+        }
+    }
+
+    private func handleTrackingAuthorization(_ status: ATTrackingManager.AuthorizationStatus) {
+        print("Authorization status after request: \(status.rawValue)")
         switch status {
         case .authorized:
-            // Tracking authorization dialog was shown
-            // and we are authorized
             print("Tracking authorized by the user")
-            // Here, you can start tracking
-        case .denied:
-            // Tracking authorization dialog was
-            // shown and permission is denied
-            print("Tracking denied by the user")
-            // You might want to disable tracking functionality
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
+        case .denied, .restricted:
+            print("Tracking not authorized (denied or restricted)")
         case .notDetermined:
-            // Tracking permission dialog has not been shown
-            print("Tracking permission not determined")
-        case .restricted:
-            // Tracking permission is restricted
-            print("Tracking restricted")
+            print("Unexpected state: notDetermined after request")
         @unknown default:
-            print("Unknown authorization status")
+            print("Unknown tracking authorization status")
         }
-      }
     }
-  }
 }
 
 @main
