@@ -47,20 +47,23 @@ struct BoxBreathingView: View {
                 
                 Spacer()
                 
-                Button(isAnimating ? "Stop" : "Start") {
+                Button(action: {
                     if isAnimating {
                         stopBreathing()
                     } else {
                         startBreathing()
                     }
+                }) {
+                    Text(isAnimating ? "Stop" : "Start")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 200, height: 50)
                 }
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 200, height: 50)
                 .background(isAnimating ? Color.red : Color.green)
                 .cornerRadius(25)
                 .shadow(radius: 5)
+
 
                 Spacer()
             }
