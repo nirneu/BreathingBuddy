@@ -14,9 +14,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     private func initializeAdMob() {
         let status = ATTrackingManager.trackingAuthorizationStatus
         if status == .notDetermined {
-            ATTrackingManager.requestTrackingAuthorization { status in
+            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
                 DispatchQueue.main.async {
-                    self.setupAdMobBasedOn(status: status)
+                    self?.setupAdMobBasedOn(status: status)
                 }
             }
         } else {
@@ -37,6 +37,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print("Unknown tracking authorization status")
         }
     }
+
 }
 
 @main
