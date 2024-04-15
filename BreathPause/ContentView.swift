@@ -69,8 +69,9 @@ struct ContentView: View {
                 
             }
             .navigationBarHidden(true)
+            .addBanner()
+
         }
-        .addBanner()
     }
 }
 
