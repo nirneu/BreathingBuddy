@@ -7,14 +7,19 @@ import AppTrackingTransparency
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         FirebaseApp.configure()
-        requestTrackingAuthorization()
         return true
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        requestTrackingAuthorization()
+    }
+
     private func requestTrackingAuthorization() {
-        ATTrackingManager.requestTrackingAuthorization { status in
-            DispatchQueue.main.async {
-                self.initializeAdMobBasedOn(status: status)
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+                DispatchQueue.main.async {
+                    self?.initializeAdMobBasedOn(status: status)
+                }
             }
         }
     }
