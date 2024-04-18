@@ -7,24 +7,19 @@ import AppTrackingTransparency
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         FirebaseApp.configure()
-        initializeAdMob()
+        requestTrackingAuthorization()
         return true
     }
 
-    private func initializeAdMob() {
-        let status = ATTrackingManager.trackingAuthorizationStatus
-        if status == .notDetermined {
-            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
-                DispatchQueue.main.async {
-                    self?.setupAdMobBasedOn(status: status)
-                }
+    private func requestTrackingAuthorization() {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            DispatchQueue.main.async {
+                self.initializeAdMobBasedOn(status: status)
             }
-        } else {
-            setupAdMobBasedOn(status: status)
         }
     }
 
-    private func setupAdMobBasedOn(status: ATTrackingManager.AuthorizationStatus) {
+    private func initializeAdMobBasedOn(status: ATTrackingManager.AuthorizationStatus) {
         switch status {
         case .authorized:
             GADMobileAds.sharedInstance().start(completionHandler: nil)
@@ -32,17 +27,16 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         case .denied, .restricted:
             NotificationCenter.default.post(name: NSNotification.Name("TrackingAuthorizationDidChange"), object: nil, userInfo: ["authorized": false])
         case .notDetermined:
-            print("Unexpected state: notDetermined after request")
+            print("Error: ATT status not determined post-request")
         @unknown default:
-            print("Unknown tracking authorization status")
+            print("Unknown ATT status encountered")
         }
     }
-
 }
 
 @main
 struct BreathPauseApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
