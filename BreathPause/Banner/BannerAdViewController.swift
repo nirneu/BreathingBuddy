@@ -1,67 +1,46 @@
-//
-//  BannerAdViewController.swift
-//  BreathingBuddy
-//
-//  Created by Nir Neuman on 25/02/2024.
-//
-
-import Foundation
-import GoogleMobileAds
 import UIKit
+import GoogleMobileAds
 import SwiftUI
 import AppTrackingTransparency
-import AdSupport
 
-class BannerAdViewController:UIViewController, GADBannerViewDelegate{
-    var bannerView:GADBannerView?
+class BannerAdViewController: UIViewController, GADBannerViewDelegate {
+    var bannerView: GADBannerView?
     let adUnitId = "ca-app-pub-3367927715135195/3849911755"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleTrackingChanged(_:)), name: NSNotification.Name("TrackingAuthorizationDidChange"), object: nil)
+        setupBannerView()
+        configureAndLoadAds()
     }
     
-    @objc func handleTrackingChanged(_ notification: Notification) {
-        if let userInfo = notification.userInfo as? [String: Bool], let authorized = userInfo["authorized"] {
-            if authorized {
+    private func setupBannerView() {
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        bannerView?.adUnitID = adUnitId
+        bannerView?.delegate = self
+        bannerView?.rootViewController = self
+        
+        let bannerWidth = view.frame.size.width
+        bannerView?.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(bannerWidth)
+        
+        setAdView(bannerView!)
+    }
+    
+    private func configureAndLoadAds() {
+        let request = GADRequest()
+        request.scene = view.window?.windowScene
+        
+        if #available(iOS 14, *) {
+            switch ATTrackingManager.trackingAuthorizationStatus {
+            case .authorized:
                 loadBannerAd()
-            } else {
+            default:
                 loadBannerAdWithoutTracking()
             }
         }
+        bannerView?.load(request)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkTrackingAuthorization()
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: nil) { [weak self] _ in
-            guard let self = self else {return}
-            self.loadBannerAd()
-        }
-    }
-    
-    private func checkTrackingAuthorization() {
-        ATTrackingManager.requestTrackingAuthorization { status in
-            DispatchQueue.main.async {
-                switch status {
-                case .authorized:
-                    // Tracking authorization granted, load the ad normally
-                    self.loadBannerAd()
-                case .denied, .notDetermined, .restricted:
-                    // Tracking authorization denied or not determined, loading a non-personalized
-                    self.loadBannerAdWithoutTracking()
-                @unknown default:
-                    // Handle future cases
-                    self.loadBannerAdWithoutTracking()
-                }
-            }
-        }
-    }
     
     private func loadBannerAd(){
         // adding Unit Id
@@ -106,17 +85,13 @@ class BannerAdViewController:UIViewController, GADBannerViewDelegate{
         setAdView(bannerView!)
     }
     
-    func setAdView(_ view: GADBannerView){
-        bannerView = view
-        self.view.addSubview(bannerView!)
-        bannerView?.translatesAutoresizingMaskIntoConstraints = false
-        let viewDictionary:[String:Any] = ["_bannerView" : bannerView]
-        self.view.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "H:|[_bannerView]|", metrics: nil, views: viewDictionary)
-        )
-        
-        self.view.addConstraints(
-            NSLayoutConstraint.constraints(withVisualFormat: "V:|[_bannerView]|", metrics: nil, views: viewDictionary)
-        )
+    func setAdView(_ view: GADBannerView) {
+        self.view.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
     }
 }
