@@ -8,6 +8,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
+        // Initialize Google Mobile Ads SDK
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
         // Delay the ATT prompt to ensure the UI is ready
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.requestTrackingPermission { status in
@@ -28,7 +31,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
         return true
     }
-
+    
     
     func requestTrackingPermission(completion: @escaping (ATTrackingManager.AuthorizationStatus) -> Void) {
         if #available(iOS 14, *) {
