@@ -15,16 +15,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>breathingbuddy-32e5c.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:35921193104:ios:de341f5b2c87c8aefcd015</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-3367927715135195~9005680295</string>
 </dict>
 </plist>
