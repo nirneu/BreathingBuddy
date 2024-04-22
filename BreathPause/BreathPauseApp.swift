@@ -7,41 +7,44 @@ import AppTrackingTransparency
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         FirebaseApp.configure()
+
+        // Only request tracking if status is not determined
+        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+            requestTrackingPermission()
+        } else {
+            handleTrackingAuthorization(ATTrackingManager.trackingAuthorizationStatus)
+        }
+
         return true
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        requestTrackingAuthorization()
-    }
-
-    private func requestTrackingAuthorization() {
-        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
-            ATTrackingManager.requestTrackingAuthorization { [weak self] status in
-                DispatchQueue.main.async {
-                    self?.initializeAdMobBasedOn(status: status)
-                }
+    private func requestTrackingPermission() {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            DispatchQueue.main.async {
+                self.handleTrackingAuthorization(status)
             }
         }
     }
 
-    private func initializeAdMobBasedOn(status: ATTrackingManager.AuthorizationStatus) {
+    private func handleTrackingAuthorization(_ status: ATTrackingManager.AuthorizationStatus) {
+        print("Authorization status after request: \(status.rawValue)")
         switch status {
         case .authorized:
+            print("Tracking authorized by the user")
             GADMobileAds.sharedInstance().start(completionHandler: nil)
-            NotificationCenter.default.post(name: NSNotification.Name("TrackingAuthorizationDidChange"), object: nil, userInfo: ["authorized": true])
         case .denied, .restricted:
-            NotificationCenter.default.post(name: NSNotification.Name("TrackingAuthorizationDidChange"), object: nil, userInfo: ["authorized": false])
+            print("Tracking not authorized (denied or restricted)")
         case .notDetermined:
-            print("Error: ATT status not determined post-request")
+            print("Unexpected state: notDetermined after request")
         @unknown default:
-            print("Unknown ATT status encountered")
+            print("Unknown tracking authorization status")
         }
     }
 }
 
 @main
-struct BreathPauseApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+struct BreathingBuddyApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
