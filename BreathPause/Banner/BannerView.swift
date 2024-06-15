@@ -10,10 +10,11 @@ import GoogleMobileAds
 import UIKit
 import SwiftUI
 
-struct BannerView: UIViewControllerRepresentable{
+struct BannerView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> some UIViewController {
         let viewController = BannerAdViewController()
+        viewController.view.backgroundColor = .clear
         return viewController
     }
     
@@ -21,19 +22,18 @@ struct BannerView: UIViewControllerRepresentable{
         
     }
 }
+
 #Preview {
     BannerView()
 }
 
 struct BannerModifier: ViewModifier {
-    private let backgroundColor = Color(red: 0.9, green: 0.95, blue: 0.98)
-
     func body(content: Content) -> some View {
         VStack(spacing: 0) {
             content
             BannerView()
                 .frame(height: 60)
-                .background(backgroundColor)
+                .background(Color.clear) // Set background to clear
                 .edgesIgnoringSafeArea(.bottom)
         }
     }
@@ -44,4 +44,5 @@ extension View {
         self.modifier(BannerModifier())
     }
 }
+
 
