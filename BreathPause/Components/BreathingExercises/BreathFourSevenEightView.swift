@@ -14,6 +14,8 @@ struct BreathFourSevenEightView: View {
     @State private var timer: Timer? // Hold a reference to the timer to manage it
     private let totalCycles = 3
     @State private var cyclesCompleted = 0
+    @State private var showInfo = false
+
     
     private let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
     private let backgroundColor = Color(red: 0.9, green: 0.95, blue: 0.98)
@@ -21,10 +23,10 @@ struct BreathFourSevenEightView: View {
 
     var body: some View {
         ZStack {
-            backgroundColor.edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Spacer()
                 
                 Text("4-7-8 Breathing")
                     .font(.largeTitle)
@@ -62,6 +64,14 @@ struct BreathFourSevenEightView: View {
                 
                 Spacer()
             }
+            .navigationBarItems(trailing: Button(action: {
+                         showInfo.toggle()
+                     }) {
+                         Image(systemName: "info.circle")
+                     })
+                     .sheet(isPresented: $showInfo) {
+                         InfoView(infoText: "4-7-8 Breathing: Take a moment to unwind. Inhale deeply through your nose for 4 seconds, pause and hold your breath for 7 seconds, then slowly exhale from your mouth for 8 seconds. Do this cycle three times.")
+                     }
         }
     }
     

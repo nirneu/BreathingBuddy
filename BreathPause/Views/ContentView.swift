@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
         NavigationView {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -17,12 +18,15 @@ struct ContentView: View {
                 VStack(spacing: 20) {
                     Spacer()
 
-                    Image("panda_icon")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 400, height: 300)
+                    GeometryReader { geometry in
+                             Image("PandaBackground")
+                                 .resizable()
+                                 .scaledToFit()
+                                 .frame(width: geometry.size.width * 1, height: geometry.size.height * 1)
+                         }
+                         .aspectRatio(contentMode: .fit)
 
-                    Text("Breathing Buddy")
+                    Text("Breath Pause")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Constants.pandaColor)
@@ -57,13 +61,14 @@ struct ContentView: View {
 
                     Spacer()
                 }
-                .padding(.bottom, 30)
-                .addBanner()
+                .padding(.bottom, 50)
+
             }
             .navigationBarHidden(true)
           
         }
-        
+        .addBanner()
+
     }
 }
 

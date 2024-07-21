@@ -5,10 +5,9 @@
 //  Created by Nir Neuman on 25/02/2024.
 //
 
-import Foundation
+import SwiftUI
 import GoogleMobileAds
 import UIKit
-import SwiftUI
 
 struct BannerView: UIViewControllerRepresentable {
 
@@ -23,19 +22,20 @@ struct BannerView: UIViewControllerRepresentable {
     }
 }
 
-#Preview {
-    BannerView()
-}
-
 struct BannerModifier: ViewModifier {
     func body(content: Content) -> some View {
-        VStack(spacing: 0) {
-            content
-            BannerView()
-                .frame(height: 60)
-                .background(Color.clear) // Set background to clear
-                .edgesIgnoringSafeArea(.bottom)
+        ZStack {
+            VStack(spacing: 0) {
+                content
+            }
+            VStack {
+                Spacer() // Push the banner to the bottom
+                BannerView()
+                    .frame(height: 50)
+                    .background(Color.clear)
+            }
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
@@ -45,4 +45,6 @@ extension View {
     }
 }
 
-
+#Preview {
+    BannerView()
+}

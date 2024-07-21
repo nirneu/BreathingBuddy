@@ -22,7 +22,9 @@ struct BoxBreathingView: View {
 
     var body: some View {
         ZStack {
-            backgroundColor.edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
+
             VStack {
                 Spacer()
                 Text("Box Breathing Exercise")
