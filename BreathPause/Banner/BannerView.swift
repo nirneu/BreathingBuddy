@@ -35,7 +35,7 @@ struct BannerModifier: ViewModifier {
                     .background(Color.clear)
             }
         }
-        .edgesIgnoringSafeArea(.bottom)
+//        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

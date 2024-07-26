@@ -54,7 +54,7 @@ struct ContentView: View {
                         }
 
                         NavigationLink(destination: GuidedBreathFocusView()) {
-                            StyledButton(text: "Guided Breath Focus", color: Constants.textColor)
+                            StyledButton(text: "Guided Breath Focus", color: Constants.darkColor)
                         }
                     }
                     .padding(.horizontal, 40)

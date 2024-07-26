@@ -13,12 +13,10 @@ struct BoxBreathingView: View {
     @State private var isAnimating = false
     @State private var timer: Timer?
     @State private var cyclesCompleted = 0 // Track the number of completed cycles
+    @State private var showInfo = false
+    @State private var forgroundColor = Constants.accentColor
+    
     let totalCycles = 3 // Default number of total cycles
-
-    private let backgroundColor =  Color(red: 0.9, green: 0.95, blue: 0.98)
-    private let textColor = Color(red: 0.3, green: 0.4, blue: 0.5)
-    private let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
-
 
     var body: some View {
         ZStack {
@@ -26,26 +24,24 @@ struct BoxBreathingView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
+                
                 Spacer()
-                Text("Box Breathing Exercise")
+                
+                Text("Box Breathing")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(textColor)
-                
-                Text("Breathe in sync with the box pattern: Inhale, hold, exhale, hold, each for 4 seconds.")
-                    .font(.headline)
-                    .fontWeight(.light)
-                    .foregroundColor(textColor)
+                    .foregroundColor(Constants.accentColor)
+                                
+                Text("Cycles Completed: \(cyclesCompleted) / \(totalCycles)")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Constants.textColor)
+                    .opacity(isAnimating ? 1 : 0)
                     .padding()
-                    .multilineTextAlignment(.center)
                 
                 BreathVisualizer(phase: $phase, secondsRemaining: $secondsRemaining)
-                    .frame(width: 300, height: 300)
+                    .frame(width: 300, height: 150)
                 
-                Text("Cycles Completed: \(cyclesCompleted) / \(totalCycles)")
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(textColor)
                 
                 Spacer()
                 
@@ -69,6 +65,14 @@ struct BoxBreathingView: View {
 
                 Spacer()
             }
+            .navigationBarItems(trailing: Button(action: {
+                       showInfo.toggle()
+                   }) {
+                       Image(systemName: "info.circle")
+                   })
+                   .sheet(isPresented: $showInfo) {
+                       InfoView(infoText: "Box Breathing: Breathe in sync with the box pattern: Inhale, hold, exhale, hold, each for 4 seconds.")
+                   }
         }
     }
 

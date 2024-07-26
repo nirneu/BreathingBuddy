@@ -16,36 +16,26 @@ struct BreathFourSevenEightView: View {
     @State private var cyclesCompleted = 0
     @State private var showInfo = false
 
-    
-    private let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
-    private let backgroundColor = Color(red: 0.9, green: 0.95, blue: 0.98)
-    private let accentColor = Color(red: 0.3, green: 0.4, blue: 0.5)
-
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
+            VStack(spacing: 0) {
+                
+                Spacer()
                 
                 Text("4-7-8 Breathing")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(accentColor)
+                    .foregroundColor(Constants.accentColor)
                     .multilineTextAlignment(.center)
-                
-                Text("Take a moment to unwind. \n Inhale deeply through your nose for 4 seconds, pause and hold your breath for 7 seconds, then slowly exhale from your mouth for 8 seconds. Do this cycle three times.")
-                    .font(.headline)
-                    .fontWeight(.light)
-                    .foregroundColor(accentColor)
-                    .multilineTextAlignment(.center)
-                    .padding()
                 
                 Spacer()
                 
                 // Visual representation of the breathing phase
                 BreathVisualizer(phase: $phase, secondsRemaining: $secondsRemaining)
-                    .frame(width: 300, height: 300)
+                    .frame(width: 300, height: 150)
                     .padding()
                 
                 Spacer()
@@ -65,13 +55,13 @@ struct BreathFourSevenEightView: View {
                 Spacer()
             }
             .navigationBarItems(trailing: Button(action: {
-                         showInfo.toggle()
-                     }) {
-                         Image(systemName: "info.circle")
-                     })
-                     .sheet(isPresented: $showInfo) {
-                         InfoView(infoText: "4-7-8 Breathing: Take a moment to unwind. Inhale deeply through your nose for 4 seconds, pause and hold your breath for 7 seconds, then slowly exhale from your mouth for 8 seconds. Do this cycle three times.")
-                     }
+                       showInfo.toggle()
+                   }) {
+                       Image(systemName: "info.circle")
+                   })
+                   .sheet(isPresented: $showInfo) {
+                       InfoView(infoText: "4-7-8 Breathing: Take a moment to unwind. Inhale deeply through your nose for 4 seconds, pause and hold your breath for 7 seconds, then slowly exhale from your mouth for 8 seconds. Do this cycle three times.")
+                   }
         }
     }
     
@@ -136,9 +126,7 @@ struct BreathFourSevenEightView: View {
 struct BreathVisualizer: View {
     @Binding var phase: String
     @Binding var secondsRemaining: Int
-    
-    private let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.8)
-    
+        
     var body: some View {
         VStack {
             Text(phase)
@@ -152,7 +140,7 @@ struct BreathVisualizer: View {
                     .fontWeight(.bold)
             }
         }
-        .foregroundStyle(primaryColor)
+        .foregroundStyle(Constants.primaryColor)
     }
 }
 

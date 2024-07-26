@@ -12,6 +12,7 @@ struct GuidedBreathFocusView: View {
     @State private var breathCount = 0
     let maxBreathCount = 10
     @State private var secondsRemainingForBreath = 8
+    @State private var showInfo = false
 
     private let backgroundColor =  Color(red: 0.9, green: 0.95, blue: 0.98)
     private let textColor = Color(red: 0.3, green: 0.4, blue: 0.5)
@@ -25,52 +26,65 @@ struct GuidedBreathFocusView: View {
             VStack {
                 Spacer()
                 
-                Text("Guided Breath Focus")
+                Text("Guided Breath")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(textColor)
-                
-                Text("Focus on your breath. Inhale and exhale slowly. Each breath cycle takes 8 seconds. Try to reach ten breaths without getting distracted.")
-                    .font(.headline)
-                    .fontWeight(.light)
-                    .foregroundColor(textColor)
-                    .padding()
+                    .foregroundColor(Constants.accentColor)
                     .multilineTextAlignment(.center)
+                
+                Text("Time for this breath: \(secondsRemainingForBreath) seconds")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Constants.textColor)
+                    .opacity(isBreathing ? 1 : 0)
+                    .padding()
+                
+                
+                Spacer()
                 
                 Text("Breaths: \(breathCount)/\(maxBreathCount)")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .foregroundColor(textColor)
+                    .foregroundColor(Constants.primaryColor)
                     .padding()
                 
-                if isBreathing {
-                    Text("Time for this breath: \(secondsRemainingForBreath) seconds")
-                        .font(.headline)
-                        .foregroundColor(textColor)
-                        .padding()
-                }
 
                 Spacer()
                 
-                Button(isBreathing ? "Stop and Reset" : "Start Breathing") {
-                    if isBreathing {
-                        resetBreathing()
-                    } else {
-                        startBreathing()
-                    }
+                Button(action: toggleBreathing) {
+                    Text(isBreathing ? "Stop" : "Start")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 220, height: 50)
+                        .background(isBreathing ? Color.red : Color.green)
+                        .cornerRadius(25)
+                        .shadow(radius: 5)
+    
                 }
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 220, height: 50)
-                .background(isBreathing ? Color.red : Color.green)
-                .cornerRadius(25)
-                .shadow(radius: 5)
                 
                 Spacer()
             }
+            .navigationBarItems(trailing: Button(action: {
+                       showInfo.toggle()
+                   }) {
+                       Image(systemName: "info.circle")
+                   })
+                   .sheet(isPresented: $showInfo) {
+                       InfoView(infoText: "Guided Breath: Focus on your breath. Inhale and exhale slowly. Each breath cycle takes 8 seconds. Try to reach ten breaths without getting distracted.")
+                   }
         }
     }
+    
+    
+    func toggleBreathing() {        
+        if isBreathing {
+            resetBreathing()
+        } else {
+            startBreathing()
+        }
+    }
+    
 
     func startBreathing() {
         isBreathing = true

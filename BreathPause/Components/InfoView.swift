@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InfoView: View {
     let infoText: String
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -24,18 +25,18 @@ struct InfoView: View {
                     .padding()
                 
                 Text(infoText)
-                    .font(.headline)
                     .padding()
                 
                 Spacer()
                 
                 Button("Close") {
-                    // Dismiss the view
+                    dismiss()
                 }
                 .font(.headline)
                 .padding()
             }
             .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }

@@ -10,8 +10,9 @@ struct DeepBreathingView: View {
     @State private var isAnimating = false
     @State private var breatheOut = false
     @State private var cyclesRemaining = 5
+    @State private var showInfo = false
+
     let totalCycles = 5
-    
     let animationDuration: Double = 5
     let circleStartSize: CGFloat = 150
     let circleEndSize: CGFloat = 250
@@ -27,34 +28,21 @@ struct DeepBreathingView: View {
                 Text("Deep Breathing")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(Constants.primaryColor)
-                    .multilineTextAlignment(.center)
-                
-                Text("Let's focus on deep breathing. \n Gently breathe in deeply through your nose, filling your lungs completely, and then exhale slowly through your mouth. Aim for 5 complete breath cycles to help calm your mind and body.")
-                    .font(.headline)
-                    .fontWeight(.light)
                     .foregroundColor(Constants.accentColor)
                     .multilineTextAlignment(.center)
-                    .padding()
                                 
-                Text(breatheOut ? "Breathe Out" : "Breathe In")
-                    .font(.title)
-                    .fontWeight(.light)
-                    .foregroundColor(Constants.textColor)
-                    .opacity(isAnimating ? 1 : 0)
-                    .animation(.easeInOut, value: isAnimating)
-                
                 Text("\(cyclesRemaining) breathes to go")
                     .font(.subheadline)
-                    .fontWeight(.light)
+                    .fontWeight(.semibold)
                     .foregroundColor(Constants.textColor)
                     .opacity(isAnimating ? 1 : 0)
                     .animation(.easeInOut, value: cyclesRemaining)
+                    .padding(.top)
                 
                 Spacer()
-                
+                                
                 Circle()
-                    .fill(Constants.pandaColor)
+                    .fill(Constants.primaryColor)
                     .frame(width: circleStartSize, height: circleStartSize)
                     .scaleEffect(breatheOut ? 1.5 : 1)
                     .animation(.easeInOut(duration: animationDuration), value: breatheOut)
@@ -67,13 +55,21 @@ struct DeepBreathingView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 200, height: 50)
-                        .background(isAnimating ? Color.red : Constants.primaryColor)
+                        .background(isAnimating ? Color.red : Color.green)
                         .cornerRadius(25)
                         .shadow(radius: 5)
                 }
 
                 Spacer()
             }
+            .navigationBarItems(trailing: Button(action: {
+                       showInfo.toggle()
+                   }) {
+                       Image(systemName: "info.circle")
+                   })
+                   .sheet(isPresented: $showInfo) {
+                       InfoView(infoText: "Deep Breathing: Let's focus on deep breathing. \nGently breathe in deeply through your nose, filling your lungs completely, and then exhale slowly through your mouth. Aim for 5 complete breath cycles to help calm your mind and body.")
+                   }
         }
     }
     
