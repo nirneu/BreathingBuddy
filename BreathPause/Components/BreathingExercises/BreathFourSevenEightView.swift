@@ -15,6 +15,8 @@ struct BreathFourSevenEightView: View {
     private let totalCycles = 3
     @State private var cyclesCompleted = 0
     @State private var showInfo = false
+    
+    var onExerciseComplete: (() -> Void)?
 
     var body: some View {
         ZStack {
@@ -117,6 +119,7 @@ struct BreathFourSevenEightView: View {
                             isAnimating = false
                             phase = "Prepare" // Or set to "Done" if you want to show a completion state
                             cyclesCompleted = 0 // Reset cycles if needed
+                            self.onExerciseComplete?() // Notify the completion of the exercise
                         } else {
                             // Start next cycle
                             phase = "Inhale"

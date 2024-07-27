@@ -23,6 +23,7 @@ struct InfoView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
+                    .foregroundStyle(Constants.accentColor)
                 
                 GeometryReader { geometry in
                          Image("PandaInfo")
@@ -34,6 +35,8 @@ struct InfoView: View {
                 
                 Text(infoText)
                     .padding()
+                    .foregroundStyle(Constants.accentColor)
+
                 
                 Spacer()
                 
@@ -42,6 +45,7 @@ struct InfoView: View {
                 }
                 .font(.headline)
                 .padding()
+                .foregroundStyle(Constants.primaryColor)
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)

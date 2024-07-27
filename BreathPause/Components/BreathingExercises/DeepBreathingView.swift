@@ -17,6 +17,8 @@ struct DeepBreathingView: View {
     let circleStartSize: CGFloat = 150
     let circleEndSize: CGFloat = 250
     
+    var onExerciseComplete: (() -> Void)?
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -90,6 +92,7 @@ struct DeepBreathingView: View {
             isAnimating = false
             breatheOut = false
             cyclesRemaining = totalCycles
+            self.onExerciseComplete?() // Notify the completion of the exercise
             return
         }
         

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @StateObject private var streakManager = StreakManager()
+    
     var body: some View {
         
         NavigationView {
@@ -16,7 +19,6 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
 
                 VStack(spacing: 20) {
-                    Spacer()
 
                     GeometryReader { geometry in
                              Image("PandaBackground")
@@ -41,20 +43,28 @@ struct ContentView: View {
                     Spacer()
 
                     VStack(spacing: 15) {
-                        NavigationLink(destination: DeepBreathingView()) {
+                        NavigationLink(destination: DeepBreathingView(onExerciseComplete: {
+                            streakManager.incrementStreakIfNeeded()
+                        })) {
                             StyledButton(text: "Deep Breathing", color: Constants.primaryColor)
                         }
 
-                        NavigationLink(destination: BreathFourSevenEightView()) {
+                        NavigationLink(destination: BreathFourSevenEightView(onExerciseComplete: {
+                            streakManager.incrementStreakIfNeeded()
+                        })) {
                             StyledButton(text: "4-7-8 Exercise", color: Constants.pandaColor)
                         }
 
-                        NavigationLink(destination: BoxBreathingView()) {
+                        NavigationLink(destination: BoxBreathingView(onExerciseComplete: {
+                            streakManager.incrementStreakIfNeeded()
+                        })) {
                             StyledButton(text: "Box Breathing", color: Constants.accentColor)
                         }
 
-                        NavigationLink(destination: GuidedBreathFocusView()) {
-                            StyledButton(text: "Guided Breath Focus", color: Constants.darkColor)
+                        NavigationLink(destination: EightySecondCalmView(onExerciseComplete: {
+                            streakManager.incrementStreakIfNeeded()
+                        })) {
+                            StyledButton(text: "Eighty-Second Calm", color: Constants.darkColor)
                         }
                     }
                     .padding(.horizontal, 40)
@@ -64,11 +74,21 @@ struct ContentView: View {
                 .padding(.bottom, 50)
 
             }
-            .navigationBarHidden(true)
+            .navigationBarItems(trailing: HStack {
+                         Image(systemName: "flame.fill")
+                             .foregroundColor(.orange)
+                             .font(.title3)
+
+                         Text("\(streakManager.currentStreak)")
+                             .font(.title3)
+                             .foregroundColor(.orange)
+                             .fontWeight(.bold)
+                     })
+                     .navigationBarHidden(false)
           
         }
         .addBanner()
-
+        .environmentObject(StreakManager())
     }
 }
 

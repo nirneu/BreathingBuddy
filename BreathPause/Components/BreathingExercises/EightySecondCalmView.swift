@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct GuidedBreathFocusView: View {
+struct EightySecondCalmView: View {
     @State private var isBreathing = false
     @State private var breathCount = 0
     let maxBreathCount = 10
     @State private var secondsRemainingForBreath = 8
     @State private var showInfo = false
+    
+    var onExerciseComplete: (() -> Void)?
 
     private let backgroundColor =  Color(red: 0.9, green: 0.95, blue: 0.98)
     private let textColor = Color(red: 0.3, green: 0.4, blue: 0.5)
@@ -26,7 +28,7 @@ struct GuidedBreathFocusView: View {
             VStack(spacing: 0) {
                 Spacer()
                 
-                Text("Guided Breath")
+                Text("Eighty-Second Calm")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Constants.accentColor)
@@ -71,7 +73,7 @@ struct GuidedBreathFocusView: View {
                        Image(systemName: "info.circle")
                    })
                    .sheet(isPresented: $showInfo) {
-                       InfoView(infoText: "Guided Breath: Focus on your breath. Inhale and exhale slowly. Each breath cycle takes 8 seconds. Try to reach ten breaths without getting distracted.")
+                       InfoView(infoText: "Eighty-Second Calm: Focus on your breath. Inhale and exhale slowly. Each breath cycle takes 8 seconds. Try to reach ten breaths without getting distracted.")
                    }
         }
     }
@@ -108,6 +110,7 @@ struct GuidedBreathFocusView: View {
                 if self.breathCount >= self.maxBreathCount {
                     timer.invalidate()
                     self.isBreathing = false
+                    self.onExerciseComplete?() // Notify the completion of the exercise
                 } else {
                     self.secondsRemainingForBreath = 8
                 }
@@ -119,5 +122,5 @@ struct GuidedBreathFocusView: View {
 
 
 #Preview {
-    GuidedBreathFocusView()
+    EightySecondCalmView()
 }

@@ -17,6 +17,8 @@ struct BoxBreathingView: View {
     @State private var forgroundColor = Constants.accentColor
     
     let totalCycles = 3 // Default number of total cycles
+    
+    var onExerciseComplete: (() -> Void)?
 
     var body: some View {
         ZStack {
@@ -125,6 +127,7 @@ struct BoxBreathingView: View {
         cyclesCompleted += 1
         if cyclesCompleted >= totalCycles {
             stopBreathing()
+            self.onExerciseComplete?() // Notify the completion of the exercise
         }
     }
 }
