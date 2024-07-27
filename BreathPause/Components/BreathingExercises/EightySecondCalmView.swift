@@ -26,7 +26,6 @@ struct EightySecondCalmView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 0) {
-                Spacer()
                 
                 Text("Eighty-Second Calm")
                     .font(.largeTitle)

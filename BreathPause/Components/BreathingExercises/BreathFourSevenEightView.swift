@@ -24,9 +24,7 @@ struct BreathFourSevenEightView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 0) {
-                
-                Spacer()
-                
+                                
                 Text("4-7-8 Breathing")
                     .font(.largeTitle)
                     .fontWeight(.bold)

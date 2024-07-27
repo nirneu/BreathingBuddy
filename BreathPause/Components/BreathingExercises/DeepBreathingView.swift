@@ -25,7 +25,6 @@ struct DeepBreathingView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 0) {
-                Spacer()
                 
                 Text("Deep Breathing")
                     .font(.largeTitle)

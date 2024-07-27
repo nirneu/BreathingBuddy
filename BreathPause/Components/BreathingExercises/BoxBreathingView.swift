@@ -26,9 +26,7 @@ struct BoxBreathingView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 0) {
-                
-                Spacer()
-                
+                                
                 Text("Box Breathing")
                     .font(.largeTitle)
                     .fontWeight(.bold)

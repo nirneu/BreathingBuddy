@@ -22,6 +22,8 @@
 		A8A8DF292B8789B1005BE779 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */; };
 		A8A8DF2C2B8790DF005BE779 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */; };
 		A8B7FC642C5504DC00BF07F4 /* StreakManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7FC632C5504DC00BF07F4 /* StreakManager.swift */; };
+		A8B7FC662C550D9E00BF07F4 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7FC652C550D9E00BF07F4 /* ConfettiView.swift */; };
+		A8B7FC682C550E7700BF07F4 /* StreakCongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7FC672C550E7700BF07F4 /* StreakCongratulationView.swift */; };
 		A8BB04782C186B6800E5678A /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB04772C186B6800E5678A /* StyledButton.swift */; };
 		A8BB04842C186F3600E5678A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = A8BB04832C186F3600E5678A /* SVGKit */; };
 		A8BB04862C186F3600E5678A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8BB04852C186F3600E5678A /* SVGKitSwift */; };
@@ -45,6 +47,8 @@
 		A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdViewController.swift; sourceTree = "<group>"; };
 		A85FBBD72C4D95A500CABBF9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A8B7FC632C5504DC00BF07F4 /* StreakManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakManager.swift; sourceTree = "<group>"; };
+		A8B7FC652C550D9E00BF07F4 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		A8B7FC672C550E7700BF07F4 /* StreakCongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCongratulationView.swift; sourceTree = "<group>"; };
 		A8BB04772C186B6800E5678A /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBreathingView.swift; sourceTree = "<group>"; };
 		A8E6D0C82BC829170059127C /* EightySecondCalmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightySecondCalmView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				A8B7FC632C5504DC00BF07F4 /* StreakManager.swift */,
+				A8B7FC652C550D9E00BF07F4 /* ConfettiView.swift */,
+				A8B7FC672C550E7700BF07F4 /* StreakCongratulationView.swift */,
 			);
 			path = Streak;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B7FC662C550D9E00BF07F4 /* ConfettiView.swift in Sources */,
 				A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */,
 				A8BB04782C186B6800E5678A /* StyledButton.swift in Sources */,
 				A81956A62C1B3CF0001E86F3 /* BreathingPanda.swift in Sources */,
@@ -271,6 +278,7 @@
 				A81956A42C1B3C2E001E86F3 /* Constants.swift in Sources */,
 				A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */,
 				A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */,
+				A8B7FC682C550E7700BF07F4 /* StreakCongratulationView.swift in Sources */,
 				A8B7FC642C5504DC00BF07F4 /* StreakManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

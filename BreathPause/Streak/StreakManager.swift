@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class StreakManager: ObservableObject {
     @Published var currentStreak: Int {
@@ -20,6 +21,8 @@ class StreakManager: ObservableObject {
         }
     }
     
+    @Published var isNewStreak: Bool = false
+    
     init() {
         self.currentStreak = UserDefaults.standard.integer(forKey: "currentStreak")
         self.lastUpdate = UserDefaults.standard.object(forKey: "lastUpdate") as? Date
@@ -31,10 +34,12 @@ class StreakManager: ObservableObject {
             if !Calendar.current.isDateInToday(lastUpdate) {
                 incrementStreak()
                 self.lastUpdate = now
+                isNewStreak = true
             }
         } else {
             incrementStreak()
             self.lastUpdate = now
+            isNewStreak = true
         }
     }
     
@@ -47,4 +52,5 @@ class StreakManager: ObservableObject {
         lastUpdate = nil
     }
 }
+
 
