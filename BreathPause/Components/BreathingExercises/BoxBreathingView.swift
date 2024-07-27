@@ -23,7 +23,7 @@ struct BoxBreathingView: View {
             LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
 
-            VStack {
+            VStack(spacing: 0) {
                 
                 Spacer()
                 
@@ -37,7 +37,9 @@ struct BoxBreathingView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(Constants.textColor)
                     .opacity(isAnimating ? 1 : 0)
-                    .padding()
+                    .padding(.top)
+                
+                Spacer()
                 
                 BreathVisualizer(phase: $phase, secondsRemaining: $secondsRemaining)
                     .frame(width: 300, height: 150)

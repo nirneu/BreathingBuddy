@@ -31,6 +31,13 @@ struct BreathFourSevenEightView: View {
                     .foregroundColor(Constants.accentColor)
                     .multilineTextAlignment(.center)
                 
+                Text("Cycles Completed: \(cyclesCompleted) / \(totalCycles)")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Constants.textColor)
+                    .opacity(isAnimating ? 1 : 0)
+                    .padding(.top)
+                
                 Spacer()
                 
                 // Visual representation of the breathing phase

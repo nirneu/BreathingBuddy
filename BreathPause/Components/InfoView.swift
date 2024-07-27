@@ -24,6 +24,14 @@ struct InfoView: View {
                     .fontWeight(.bold)
                     .padding()
                 
+                GeometryReader { geometry in
+                         Image("PandaInfo")
+                             .resizable()
+                             .scaledToFit()
+                             .frame(width: geometry.size.width * 1, height: geometry.size.height * 1)
+                     }
+                     .aspectRatio(contentMode: .fit)
+                
                 Text(infoText)
                     .padding()
                 

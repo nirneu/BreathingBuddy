@@ -23,7 +23,7 @@ struct GuidedBreathFocusView: View {
             LinearGradient(gradient: Gradient(colors: [Constants.gradientStart, Constants.gradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
 
-            VStack {
+            VStack(spacing: 0) {
                 Spacer()
                 
                 Text("Guided Breath")
