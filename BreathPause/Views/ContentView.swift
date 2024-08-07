@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
+import FirebaseCore
+import GoogleMobileAds
 
 struct ContentView: View {
     @StateObject private var streakManager = StreakManager()
     @State private var showStreakCongratulations = false
+    private static var isFirebaseConfigured = false
 
     var body: some View {
         NavigationView {
@@ -92,6 +96,28 @@ struct ContentView: View {
         }
         .addBanner()
         .environmentObject(streakManager)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            if #available(iOS 14, *) {
+                let status = ATTrackingManager.trackingAuthorizationStatus
+                if status == .notDetermined {
+                    ATTrackingManager.requestTrackingAuthorization { status in
+                        self.initializeSDKs()
+                    }
+                } else {
+                    self.initializeSDKs()
+                }
+            } else {
+                self.initializeSDKs()
+            }
+        }
+    }
+
+    private func initializeSDKs() {
+        if !ContentView.isFirebaseConfigured {
+            ContentView.isFirebaseConfigured = true
+            FirebaseApp.configure()
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
+        }
     }
 
     private func checkForNewStreak() {

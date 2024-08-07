@@ -30,17 +30,21 @@ class StreakManager: ObservableObject {
     
     func incrementStreakIfNeeded() {
         let now = Date()
+        
         if let lastUpdate = lastUpdate {
-            if !Calendar.current.isDateInToday(lastUpdate) {
-                incrementStreak()
-                self.lastUpdate = now
-                isNewStreak = true
+            if Calendar.current.isDateInToday(lastUpdate) {
+                // Already updated today, do nothing
+                return
+            } else if !Calendar.current.isDate(lastUpdate, inSameDayAs: Calendar.current.date(byAdding: .day, value: -1, to: now)!) {
+                // If the last update was not yesterday, reset the streak
+                resetStreak()
             }
-        } else {
-            incrementStreak()
-            self.lastUpdate = now
-            isNewStreak = true
         }
+        
+        // Increment the streak
+        incrementStreak()
+        self.lastUpdate = now
+        isNewStreak = true
     }
     
     private func incrementStreak() {
@@ -52,5 +56,3 @@ class StreakManager: ObservableObject {
         lastUpdate = nil
     }
 }
-
-
