@@ -15,6 +15,12 @@
 		A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */; };
 		A81956A42C1B3C2E001E86F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81956A32C1B3C2E001E86F3 /* Constants.swift */; };
 		A81956A62C1B3CF0001E86F3 /* BreathingPanda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81956A52C1B3CF0001E86F3 /* BreathingPanda.swift */; };
+		A8255D482C663B5F00861CA9 /* BreathingExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */; };
+		A8255D4A2C663C8C00861CA9 /* ExerciseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D492C663C8C00861CA9 /* ExerciseInfoView.swift */; };
+		A8255D4C2C66431900861CA9 /* InhaleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D4B2C66431900861CA9 /* InhaleSlider.swift */; };
+		A8255D4E2C66432F00861CA9 /* HoldSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D4D2C66432F00861CA9 /* HoldSlider.swift */; };
+		A8255D502C66433E00861CA9 /* ExhaleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D4F2C66433E00861CA9 /* ExhaleSlider.swift */; };
+		A8255D522C66435000861CA9 /* CycleStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D512C66435000861CA9 /* CycleStepper.swift */; };
 		A83301A72BD6ADB600F28011 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A83301A62BD6ADB600F28011 /* GoogleService-Info.plist */; };
 		A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E82E62B8B869D00BAA308 /* BannerView.swift */; };
 		A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */; };
@@ -41,6 +47,12 @@
 		A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathFourSevenEightView.swift; sourceTree = "<group>"; };
 		A81956A32C1B3C2E001E86F3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A81956A52C1B3CF0001E86F3 /* BreathingPanda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPanda.swift; sourceTree = "<group>"; };
+		A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExerciseView.swift; sourceTree = "<group>"; };
+		A8255D492C663C8C00861CA9 /* ExerciseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoView.swift; sourceTree = "<group>"; };
+		A8255D4B2C66431900861CA9 /* InhaleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InhaleSlider.swift; sourceTree = "<group>"; };
+		A8255D4D2C66432F00861CA9 /* HoldSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldSlider.swift; sourceTree = "<group>"; };
+		A8255D4F2C66433E00861CA9 /* ExhaleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhaleSlider.swift; sourceTree = "<group>"; };
+		A8255D512C66435000861CA9 /* CycleStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleStepper.swift; sourceTree = "<group>"; };
 		A83301A62BD6ADB600F28011 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A83E82E42B8B852800BAA308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A83E82E62B8B869D00BAA308 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -117,6 +129,11 @@
 				A8BB04792C186B8B00E5678A /* BreathingExercises */,
 				A8BB04762C186B4D00E5678A /* Buttons */,
 				A85FBBD72C4D95A500CABBF9 /* InfoView.swift */,
+				A8255D492C663C8C00861CA9 /* ExerciseInfoView.swift */,
+				A8255D4B2C66431900861CA9 /* InhaleSlider.swift */,
+				A8255D4D2C66432F00861CA9 /* HoldSlider.swift */,
+				A8255D4F2C66433E00861CA9 /* ExhaleSlider.swift */,
+				A8255D512C66435000861CA9 /* CycleStepper.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -163,6 +180,7 @@
 				A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */,
 				A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */,
 				A8E6D0C82BC829170059127C /* EightySecondCalmView.swift */,
+				A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */,
 			);
 			path = BreathingExercises;
 			sourceTree = "<group>";
@@ -273,13 +291,19 @@
 				A85FBBD82C4D95A500CABBF9 /* InfoView.swift in Sources */,
 				A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */,
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
+				A8255D4A2C663C8C00861CA9 /* ExerciseInfoView.swift in Sources */,
 				A8158BB02B83D3BE00070E98 /* BreathPauseApp.swift in Sources */,
 				A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */,
+				A8255D502C66433E00861CA9 /* ExhaleSlider.swift in Sources */,
+				A8255D522C66435000861CA9 /* CycleStepper.swift in Sources */,
 				A81956A42C1B3C2E001E86F3 /* Constants.swift in Sources */,
 				A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */,
 				A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */,
+				A8255D482C663B5F00861CA9 /* BreathingExerciseView.swift in Sources */,
 				A8B7FC682C550E7700BF07F4 /* StreakCongratulationView.swift in Sources */,
+				A8255D4E2C66432F00861CA9 /* HoldSlider.swift in Sources */,
 				A8B7FC642C5504DC00BF07F4 /* StreakManager.swift in Sources */,
+				A8255D4C2C66431900861CA9 /* InhaleSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

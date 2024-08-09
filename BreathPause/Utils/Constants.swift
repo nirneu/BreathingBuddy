@@ -19,3 +19,19 @@ struct Constants {
     static let gradientEnd = Color(red: 0.6, green: 0.8, blue: 0.9) // Light Gradient End
 }
 
+struct BreathingConstants {
+    static let defaultInhaleDuration: Double = 4
+    static let defaultHoldDuration: Double = 7
+    static let defaultExhaleDuration: Double = 8
+    static let defaultCycleCount: Int = 5
+
+    static let minInhaleDuration: Double = 3
+    static let maxInhaleDuration: Double = 10
+
+    static let minHoldDuration: Double = 4
+    static let maxHoldDuration: Double = 7
+
+    static let minExhaleDuration: Double = 5
+    static let maxExhaleDuration: Double = 8
+}
+
