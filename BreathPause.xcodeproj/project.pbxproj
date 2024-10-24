@@ -11,8 +11,6 @@
 		A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BB12B83D3BE00070E98 /* ContentView.swift */; };
 		A8158BB42B83D3BF00070E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB32B83D3BF00070E98 /* Assets.xcassets */; };
 		A8158BB72B83D3BF00070E98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */; };
-		A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC12B83D45000070E98 /* DeepBreathingView.swift */; };
-		A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */; };
 		A81956A42C1B3C2E001E86F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81956A32C1B3C2E001E86F3 /* Constants.swift */; };
 		A81956A62C1B3CF0001E86F3 /* BreathingPanda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81956A52C1B3CF0001E86F3 /* BreathingPanda.swift */; };
 		A8255D482C663B5F00861CA9 /* BreathingExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */; };
@@ -24,17 +22,14 @@
 		A83301A72BD6ADB600F28011 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A83301A62BD6ADB600F28011 /* GoogleService-Info.plist */; };
 		A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E82E62B8B869D00BAA308 /* BannerView.swift */; };
 		A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */; };
-		A85FBBD82C4D95A500CABBF9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85FBBD72C4D95A500CABBF9 /* InfoView.swift */; };
 		A8A8DF292B8789B1005BE779 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF282B8789B1005BE779 /* FirebaseAnalytics */; };
 		A8A8DF2C2B8790DF005BE779 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A8A8DF2B2B8790DF005BE779 /* GoogleMobileAds */; };
 		A8B7FC642C5504DC00BF07F4 /* StreakManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7FC632C5504DC00BF07F4 /* StreakManager.swift */; };
-		A8B7FC662C550D9E00BF07F4 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7FC652C550D9E00BF07F4 /* ConfettiView.swift */; };
-		A8B7FC682C550E7700BF07F4 /* StreakCongratulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B7FC672C550E7700BF07F4 /* StreakCongratulationView.swift */; };
 		A8BB04782C186B6800E5678A /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB04772C186B6800E5678A /* StyledButton.swift */; };
 		A8BB04842C186F3600E5678A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = A8BB04832C186F3600E5678A /* SVGKit */; };
 		A8BB04862C186F3600E5678A /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8BB04852C186F3600E5678A /* SVGKitSwift */; };
-		A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */; };
-		A8E6D0C92BC829170059127C /* EightySecondCalmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6D0C82BC829170059127C /* EightySecondCalmView.swift */; };
+		A8F7E9FB2C713BD700C3E5C6 /* BreathingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7E9FA2C713BD700C3E5C6 /* BreathingCircleView.swift */; };
+		A8F7E9FD2C713CC500C3E5C6 /* BreathingCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F7E9FC2C713CC500C3E5C6 /* BreathingCycleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +38,6 @@
 		A8158BB12B83D3BE00070E98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A8158BB32B83D3BF00070E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8158BB62B83D3BF00070E98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A8158BC12B83D45000070E98 /* DeepBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepBreathingView.swift; sourceTree = "<group>"; };
-		A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathFourSevenEightView.swift; sourceTree = "<group>"; };
 		A81956A32C1B3C2E001E86F3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A81956A52C1B3CF0001E86F3 /* BreathingPanda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingPanda.swift; sourceTree = "<group>"; };
 		A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExerciseView.swift; sourceTree = "<group>"; };
@@ -57,13 +50,10 @@
 		A83E82E42B8B852800BAA308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A83E82E62B8B869D00BAA308 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		A83E82E82B8B86C400BAA308 /* BannerAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdViewController.swift; sourceTree = "<group>"; };
-		A85FBBD72C4D95A500CABBF9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		A8B7FC632C5504DC00BF07F4 /* StreakManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakManager.swift; sourceTree = "<group>"; };
-		A8B7FC652C550D9E00BF07F4 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
-		A8B7FC672C550E7700BF07F4 /* StreakCongratulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCongratulationView.swift; sourceTree = "<group>"; };
 		A8BB04772C186B6800E5678A /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
-		A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBreathingView.swift; sourceTree = "<group>"; };
-		A8E6D0C82BC829170059127C /* EightySecondCalmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightySecondCalmView.swift; sourceTree = "<group>"; };
+		A8F7E9FA2C713BD700C3E5C6 /* BreathingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingCircleView.swift; sourceTree = "<group>"; };
+		A8F7E9FC2C713CC500C3E5C6 /* BreathingCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingCycleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BB047A2C186B9900E5678A /* PandaAvatar */,
-				A8BB04792C186B8B00E5678A /* BreathingExercises */,
 				A8BB04762C186B4D00E5678A /* Buttons */,
-				A85FBBD72C4D95A500CABBF9 /* InfoView.swift */,
 				A8255D492C663C8C00861CA9 /* ExerciseInfoView.swift */,
 				A8255D4B2C66431900861CA9 /* InhaleSlider.swift */,
 				A8255D4D2C66432F00861CA9 /* HoldSlider.swift */,
@@ -151,8 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				A8B7FC632C5504DC00BF07F4 /* StreakManager.swift */,
-				A8B7FC652C550D9E00BF07F4 /* ConfettiView.swift */,
-				A8B7FC672C550E7700BF07F4 /* StreakCongratulationView.swift */,
 			);
 			path = Streak;
 			sourceTree = "<group>";
@@ -173,18 +159,6 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		A8BB04792C186B8B00E5678A /* BreathingExercises */ = {
-			isa = PBXGroup;
-			children = (
-				A8158BC12B83D45000070E98 /* DeepBreathingView.swift */,
-				A8158BC32B83D49400070E98 /* BreathFourSevenEightView.swift */,
-				A8E6D0C62BC8288F0059127C /* BoxBreathingView.swift */,
-				A8E6D0C82BC829170059127C /* EightySecondCalmView.swift */,
-				A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */,
-			);
-			path = BreathingExercises;
-			sourceTree = "<group>";
-		};
 		A8BB047A2C186B9900E5678A /* PandaAvatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				A8158BB12B83D3BE00070E98 /* ContentView.swift */,
+				A8F7E9FA2C713BD700C3E5C6 /* BreathingCircleView.swift */,
+				A8F7E9FC2C713CC500C3E5C6 /* BreathingCycleView.swift */,
+				A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,27 +260,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8B7FC662C550D9E00BF07F4 /* ConfettiView.swift in Sources */,
 				A83E82E72B8B869D00BAA308 /* BannerView.swift in Sources */,
 				A8BB04782C186B6800E5678A /* StyledButton.swift in Sources */,
 				A81956A62C1B3CF0001E86F3 /* BreathingPanda.swift in Sources */,
-				A8E6D0C92BC829170059127C /* EightySecondCalmView.swift in Sources */,
-				A85FBBD82C4D95A500CABBF9 /* InfoView.swift in Sources */,
 				A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */,
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
 				A8255D4A2C663C8C00861CA9 /* ExerciseInfoView.swift in Sources */,
 				A8158BB02B83D3BE00070E98 /* BreathPauseApp.swift in Sources */,
-				A8158BC22B83D45000070E98 /* DeepBreathingView.swift in Sources */,
+				A8F7E9FD2C713CC500C3E5C6 /* BreathingCycleView.swift in Sources */,
 				A8255D502C66433E00861CA9 /* ExhaleSlider.swift in Sources */,
 				A8255D522C66435000861CA9 /* CycleStepper.swift in Sources */,
 				A81956A42C1B3C2E001E86F3 /* Constants.swift in Sources */,
-				A8158BC42B83D49400070E98 /* BreathFourSevenEightView.swift in Sources */,
-				A8E6D0C72BC8288F0059127C /* BoxBreathingView.swift in Sources */,
 				A8255D482C663B5F00861CA9 /* BreathingExerciseView.swift in Sources */,
-				A8B7FC682C550E7700BF07F4 /* StreakCongratulationView.swift in Sources */,
 				A8255D4E2C66432F00861CA9 /* HoldSlider.swift in Sources */,
 				A8B7FC642C5504DC00BF07F4 /* StreakManager.swift in Sources */,
 				A8255D4C2C66431900861CA9 /* InhaleSlider.swift in Sources */,
+				A8F7E9FB2C713BD700C3E5C6 /* BreathingCircleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
