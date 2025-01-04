@@ -4,13 +4,21 @@ import GoogleMobileAds
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
+    // A flag to manage notification enable/disable state
+    private var areNotificationsEnabled = false
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Set the notification center delegate
         UNUserNotificationCenter.current().delegate = self
         
-        // Request notification permission
-        requestNotificationPermission()
+        // Request notification permission if notifications are enabled
+        if areNotificationsEnabled {
+            requestNotificationPermission()
+        } else {
+            clearExistingNotifications()
+        }
         
         return true
     }
@@ -28,9 +36,12 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 
     private func clearExistingNotifications() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        print("All notifications cleared")
     }
     
     private func scheduleDailyNotification() {
+        guard areNotificationsEnabled else { return } // Don't schedule notifications if disabled
+        
         let content = UNMutableNotificationContent()
         content.title = "Time for Your Daily Exercise"
         content.body = "Don't forget to do your breathing exercise today!"
@@ -82,4 +93,3 @@ struct BreathingBuddyApp: App {
         }
     }
 }
-
