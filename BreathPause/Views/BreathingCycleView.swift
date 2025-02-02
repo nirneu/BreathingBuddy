@@ -31,6 +31,10 @@ struct BreathingCycleView: View {
 
     @Environment(\.presentationMode) var presentationMode
 
+    @StateObject private var soundManager = SoundManager()
+    @State private var showSoundPicker = false
+    @State private var volume: Float = 0.5
+
     private var remainingCycles: Int {
         return cycles - currentCycle
     }
@@ -46,6 +50,38 @@ struct BreathingCycleView: View {
                     Text("Cycles Remaining: \(remainingCycles)")
                         .font(.headline)
                     
+                    HStack {
+                        Button(action: { showSoundPicker.toggle() }) {
+                            HStack {
+                                Image(systemName: "speaker.wave.2")
+                                Text(soundManager.availableSounds[soundManager.selectedSound] ?? "None")
+                            }
+                            .padding()
+                            .background(Color.secondary.opacity(0.2))
+                            .cornerRadius(10)
+                        }
+                        
+                        if soundManager.isPlaying {
+                            Slider(value: Binding(
+                                get: { Double(volume) },
+                                set: { newValue in
+                                    volume = Float(newValue)
+                                    soundManager.setVolume(volume)
+                                }
+                            ), in: 0...1)
+                            .frame(width: 100)
+                        }
+                    }
+                    .sheet(isPresented: $showSoundPicker) {
+                        SoundPickerView(soundManager: soundManager)
+                    }
+
+                    if let error = soundManager.soundLoadError {
+                        Text(error)
+                            .foregroundColor(.red)
+                            .font(.caption)
+                    }
+
                     BreathingCircleView(phase: $phase, timeRemaining: $timeRemaining, phaseDuration: $phaseDuration)
                         .frame(width: 300, height: 300)
                         .padding()
@@ -70,6 +106,7 @@ struct BreathingCycleView: View {
             .onDisappear {
                 timer?.invalidate()
                 timer = nil
+                soundManager.cleanup()
             }
             .navigationBarHidden(true)
             .addBanner()

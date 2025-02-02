@@ -483,7 +483,7 @@
 				A8158BB92B83D3BF00070E98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A8158BBA2B83D3BF00070E98 /* Build configuration list for PBXNativeTarget "BreathPause" */ = {
 			isa = XCConfigurationList;
@@ -492,7 +492,7 @@
 				A8158BBC2B83D3BF00070E98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
