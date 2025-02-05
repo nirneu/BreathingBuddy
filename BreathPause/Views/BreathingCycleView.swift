@@ -20,6 +20,7 @@ struct BreathingCycleView: View {
     @Binding var cycles: Int
     
     @EnvironmentObject var streakManager: StreakManager
+    @EnvironmentObject var soundManager: SoundManager
 
     @State private var currentCycle = 0
     @State private var phase = "Inhale"
@@ -30,7 +31,7 @@ struct BreathingCycleView: View {
     @State private var timer: Timer? = nil
 
     @Environment(\.presentationMode) var presentationMode
-
+    
     private var remainingCycles: Int {
         return cycles - currentCycle
     }
@@ -45,6 +46,7 @@ struct BreathingCycleView: View {
 
                     Text("Cycles Remaining: \(remainingCycles)")
                         .font(.headline)
+                    
                     
                     BreathingCircleView(phase: $phase, timeRemaining: $timeRemaining, phaseDuration: $phaseDuration)
                         .frame(width: 300, height: 300)
@@ -62,7 +64,7 @@ struct BreathingCycleView: View {
                             .cornerRadius(25)
                             .shadow(radius: 5)
                     }
-                    .padding(.bottom, 20) 
+                    .padding(.bottom, 20)
                 }
                 .padding(.bottom, 50)
             }
@@ -70,6 +72,7 @@ struct BreathingCycleView: View {
             .onDisappear {
                 timer?.invalidate()
                 timer = nil
+                soundManager.cleanup()
             }
             .navigationBarHidden(true)
             .addBanner()
@@ -80,6 +83,8 @@ struct BreathingCycleView: View {
 
 
     private func startBreathingCycle() {
+        soundManager.startExerciseSound()
+        
         currentCycle = 0
         phaseIndex = 0
         setupPhases()

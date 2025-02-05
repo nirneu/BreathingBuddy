@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6C521E12D53F9F000E89070 /* SoundSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C521E02D53F9F000E89070 /* SoundSettingsView.swift */; };
+		A6DA1AF82D501A6700CD8355 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1AF72D501A6700CD8355 /* SoundManager.swift */; };
+		A6DA1AFA2D501AB000CD8355 /* SoundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA1AF92D501AA600CD8355 /* SoundPickerView.swift */; };
+		A6DA1AFF2D501B6200CD8355 /* forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6DA1AFE2D501B6200CD8355 /* forest.mp3 */; };
+		A6DA1B012D501B6800CD8355 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A6DA1B002D501B6800CD8355 /* rain.mp3 */; };
 		A8158BB02B83D3BE00070E98 /* BreathPauseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BAF2B83D3BE00070E98 /* BreathPauseApp.swift */; };
 		A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8158BB12B83D3BE00070E98 /* ContentView.swift */; };
 		A8158BB42B83D3BF00070E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8158BB32B83D3BF00070E98 /* Assets.xcassets */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6C521E02D53F9F000E89070 /* SoundSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsView.swift; sourceTree = "<group>"; };
+		A6DA1AF72D501A6700CD8355 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		A6DA1AF92D501AA600CD8355 /* SoundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPickerView.swift; sourceTree = "<group>"; };
+		A6DA1AFE2D501B6200CD8355 /* forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forest.mp3; sourceTree = "<group>"; };
+		A6DA1B002D501B6800CD8355 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
 		A8158BAC2B83D3BE00070E98 /* BreathPause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreathPause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8158BAF2B83D3BE00070E98 /* BreathPauseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathPauseApp.swift; sourceTree = "<group>"; };
 		A8158BB12B83D3BE00070E98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6DA1AFD2D501B5800CD8355 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A6DA1AFE2D501B6200CD8355 /* forest.mp3 */,
+				A6DA1B002D501B6800CD8355 /* rain.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		A8158BA32B83D3BE00070E98 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +109,7 @@
 		A8158BAE2B83D3BE00070E98 /* BreathPause */ = {
 			isa = PBXGroup;
 			children = (
+				A6DA1AFD2D501B5800CD8355 /* Sounds */,
 				A8BB047D2C186BCA00E5678A /* Views */,
 				A8BB04732C186B2600E5678A /* Utils */,
 				A83E82E42B8B852800BAA308 /* Info.plist */,
@@ -147,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A81956A32C1B3C2E001E86F3 /* Constants.swift */,
+				A6DA1AF72D501A6700CD8355 /* SoundManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -170,10 +191,12 @@
 		A8BB047D2C186BCA00E5678A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A6DA1AF92D501AA600CD8355 /* SoundPickerView.swift */,
 				A8158BB12B83D3BE00070E98 /* ContentView.swift */,
 				A8F7E9FA2C713BD700C3E5C6 /* BreathingCircleView.swift */,
 				A8F7E9FC2C713CC500C3E5C6 /* BreathingCycleView.swift */,
 				A8255D472C663B5F00861CA9 /* BreathingExerciseView.swift */,
+				A6C521E02D53F9F000E89070 /* SoundSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DA1AFF2D501B6200CD8355 /* forest.mp3 in Resources */,
+				A6DA1B012D501B6800CD8355 /* rain.mp3 in Resources */,
 				A8158BB72B83D3BF00070E98 /* Preview Assets.xcassets in Resources */,
 				A8158BB42B83D3BF00070E98 /* Assets.xcassets in Resources */,
 				A83301A72BD6ADB600F28011 /* GoogleService-Info.plist in Resources */,
@@ -265,10 +290,13 @@
 				A81956A62C1B3CF0001E86F3 /* BreathingPanda.swift in Sources */,
 				A83E82E92B8B86C400BAA308 /* BannerAdViewController.swift in Sources */,
 				A8158BB22B83D3BE00070E98 /* ContentView.swift in Sources */,
+				A6C521E12D53F9F000E89070 /* SoundSettingsView.swift in Sources */,
 				A8255D4A2C663C8C00861CA9 /* ExerciseInfoView.swift in Sources */,
 				A8158BB02B83D3BE00070E98 /* BreathPauseApp.swift in Sources */,
+				A6DA1AFA2D501AB000CD8355 /* SoundPickerView.swift in Sources */,
 				A8F7E9FD2C713CC500C3E5C6 /* BreathingCycleView.swift in Sources */,
 				A8255D502C66433E00861CA9 /* ExhaleSlider.swift in Sources */,
+				A6DA1AF82D501A6700CD8355 /* SoundManager.swift in Sources */,
 				A8255D522C66435000861CA9 /* CycleStepper.swift in Sources */,
 				A81956A42C1B3C2E001E86F3 /* Constants.swift in Sources */,
 				A8255D482C663B5F00861CA9 /* BreathingExerciseView.swift in Sources */,

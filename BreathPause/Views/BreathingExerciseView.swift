@@ -17,6 +17,7 @@ struct BreathingExerciseView: View {
     @State private var showExerciseScreen = false
     
     @EnvironmentObject var streakManager: StreakManager
+    @StateObject private var soundManager = SoundManager.shared
 
     var body: some View {
         VStack {
@@ -54,11 +55,15 @@ struct BreathingExerciseView: View {
                         HoldSlider(holdDuration: $holdDuration)
                         ExhaleSlider(exhaleDuration: $exhaleDuration)
                     }
-                }
-                .padding()
+                    
+                    Divider()
+                        .padding(.vertical)
+                    
+                    CycleStepper(cycles: $cycles)
+                        .padding()
 
-                CycleStepper(cycles: $cycles)
-                    .padding()
+                    SoundSettingsView(soundManager: soundManager)
+                }
             }
 
             Button(action: { showExerciseScreen.toggle() }) {
@@ -97,6 +102,7 @@ struct BreathingExerciseView: View {
             ExerciseInfoView(selectedExercise: $selectedExercise)
         }
         .padding(.bottom, 50) // Adjust this value based on your ad banner's height
+        .environmentObject(soundManager)
     }
 
     private func updateSettingsForSelectedExercise(_ exercise: String) {
